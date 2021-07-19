@@ -6,7 +6,7 @@
 
 
 
-### [Validating query](https://neomatrixcode.github.io/Diana.jl/stable/client/#Validating-query-1)
+### Validating query
 
 It is possible to validate the query locally before sending the request, only basic validations are carried out.
 

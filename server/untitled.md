@@ -1,8 +1,6 @@
 # Schemas and Types
 
-
-
-### [Type system](https://neomatrixcode.github.io/Diana.jl/stable/server/#Type-system-1)
+## Type system
 
 If you've seen a GraphQL query before, you know that the GraphQL query language is basically about selecting fields on objects. So, for example, in the following query:
 
@@ -23,7 +21,7 @@ Because the shape of a GraphQL query closely matches the result, you can predict
 
 Every GraphQL service defines a set of types which completely describe the set of possible data you can query on that service. Then, when queries come in, they are validated and executed against that schema.
 
-### [Object types and fields](https://neomatrixcode.github.io/Diana.jl/stable/server/#Object-types-and-fields-1)
+### Object types and fields
 
 The most basic components of a GraphQL schema are object types, which just represent a kind of object you can fetch from your service, and what fields it has. In the GraphQL schema language, we might represent it like this:
 
@@ -53,7 +51,7 @@ The language is pretty readable, but let's go over it so that we can have a shar
 
 Now you know what a GraphQL object type looks like, and how to read the basics of the GraphQL type language.
 
-### [Arguments](https://neomatrixcode.github.io/Diana.jl/stable/server/#Arguments-1)
+### Arguments
 
 Every field on a GraphQL object type can have zero or more arguments, for example the `edad` field below:
 
@@ -79,7 +77,7 @@ Dict("Persona" => Dict(
 
 All arguments are named. Unlike languages like JavaScript and Python where functions take a list of ordered arguments, all arguments in GraphQL are passed by name specifically. In this case, the `edad` field has one defined argument, `valor`.
 
-### [The Query and Mutation types](https://neomatrixcode.github.io/Diana.jl/stable/server/#The-Query-and-Mutation-types-1)
+### The Query and Mutation types
 
 Most types in your schema will just be normal object types, but there are two types that are special within a schema:
 
@@ -141,7 +139,7 @@ Mutations work in a similar way - you define fields on the `Mutation` type, and 
 
 It's important to remember that other than the special status of being the "entry point" into the schema, the `Query` and `Mutation` types are the same as any other GraphQL object type, and their fields work exactly the same way.
 
-### [Scalar types](https://neomatrixcode.github.io/Diana.jl/stable/server/#Scalar-types-1)
+### Scalar types
 
 A GraphQL object type has a name and fields, but at some point those fields have to resolve to some concrete data. That's where the scalar types come in: they represent the leaves of the query.
 
@@ -166,7 +164,7 @@ GraphQL comes with a set of default scalar types out of the box:
 * `Boolean`: `true` or `false`.
 * `ID`: The ID scalar type represents a unique identifier, often used to refetch an object or as the key for a cache. The ID type is serialized in the same way as a String; however, defining it as an `ID` signifies that it is not intended to be human‐readable.
 
-### [Input types](https://neomatrixcode.github.io/Diana.jl/stable/server/#Input-types-1)
+### Input types
 
 So far, we've only talked about passing scalar values as arguments into a field. But you can also easily pass complex objects. This is particularly valuable in the case of mutations, where you might want to pass in a whole object to be created. In the GraphQL schema language, input types look exactly the same as regular object types, but with the keyword `input` instead of `type`:
 

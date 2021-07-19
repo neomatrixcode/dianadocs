@@ -4,7 +4,7 @@
 
 
 
-### [Link](https://neomatrixcode.github.io/Diana.jl/stable/client/#Link-1)
+### Link
 
 It is possible to get links to the graphql query editor
 

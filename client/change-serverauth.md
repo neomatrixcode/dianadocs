@@ -4,7 +4,7 @@
 
 
 
-### [Change serverAuth](https://neomatrixcode.github.io/Diana.jl/stable/client/#Change-serverAuth-1)
+## Change serverAuth
 
 ```text
 client.serverAuth("Bearer my-jwt-token")

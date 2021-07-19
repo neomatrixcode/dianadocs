@@ -48,7 +48,7 @@ If a field produces a scalar value like a string or number, then the execution c
 
 
 
-### [Root fields & resolvers](https://neomatrixcode.github.io/Diana.jl/stable/server/#Root-fields-and-resolvers-1)
+### Root fields & resolvers
 
 At the top level of every GraphQL server is a type that represents all of the possible entry points into the GraphQL API, it's often called the _Root_ type or the _Query_ type.
 
@@ -74,7 +74,7 @@ A resolver function receives four arguments:
 * `context` A value which is provided to every resolver and holds important contextual information like the currently logged in user, or access to a database.
 * `info` A value which holds field-specific information relevant to the current query as well as the schema details.
 
-#### [Context](https://neomatrixcode.github.io/Diana.jl/stable/server/#Context-1)
+#### Context
 
 The context variable is used to pass data between the resolvers or to store global variables, its value is defined when creating the scheme
 
@@ -82,7 +82,7 @@ The context variable is used to pass data between the resolvers or to store glob
  my_schema = Schema(schema, resolvers, context=Dict("data"=>"datacontext"))
 ```
 
-### [Trivial resolvers](https://neomatrixcode.github.io/Diana.jl/stable/server/#Trivial-resolvers-1)
+### Trivial resolvers
 
 Now that a `Persona` object is available, GraphQL execution can continue with the fields requested on it.
 
@@ -109,7 +109,7 @@ Resolving age in this case is very straight-forward. The name resolver function 
 
 In fact, Diana will allow you to skip resolvers that simple and will simply assume that if a resolver is not provided for a field, a property of the same name must be read and returned
 
-### [Producing the result](https://neomatrixcode.github.io/Diana.jl/stable/server/#Producing-the-result-1)
+### Producing the result
 
 As each field is resolved, the resulting value is placed into a dictionary with the field name as the key and the resolved value as the value, this continues from the bottom leaf fields of the query all the way back up to the original field on the root Query type. Collectively these produce a structure that mirrors the original query which can then be sent \(JSON\) to the client which requested it.
 

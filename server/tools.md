@@ -6,7 +6,7 @@ Diana provides the Parser and the Lexer of the graphql for anyone to create thei
 
 The lexer is built based on the [Tokenize](https://github.com/KristofferC/Tokenize.jl) package code and the Parser on the [graphql-js](https://github.com/graphql/graphql-js) package. **Thanks people.**
 
-### [Parser](https://neomatrixcode.github.io/Diana.jl/stable/server/#Parser-1)
+## Parser
 
 ```text
 using Diana
@@ -61,7 +61,7 @@ result:
  < Node :: Name ,value : alias >  > ] >  > ] >  > ] >  > ] >  > ] >
 ```
 
-### [Lexer](https://neomatrixcode.github.io/Diana.jl/stable/server/#Lexer-1)
+## Lexer
 
 ```text
 using Diana

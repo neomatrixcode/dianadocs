@@ -1,6 +1,6 @@
 # Queries and Mutations
 
-### [Fields](https://neomatrixcode.github.io/Diana.jl/stable/server/#Fields-1)
+### Fields
 
 At its simplest, GraphQL is about asking for specific fields on objects. Let's start by looking at a very simple query and the result we get when we run it:
 
@@ -20,7 +20,7 @@ The field `nombre` returns a `String` type.
 
 In the previous example, we just asked for the nombre of our persona which returned a String, but fields can also refer to Objects. In that case, you can make a _sub-selection_ of fields for that object. GraphQL queries can traverse related objects and their fields, letting clients fetch lots of related data in one request, instead of making several roundtrips as one would need in a classic REST architecture.
 
-### [Arguments](https://neomatrixcode.github.io/Diana.jl/stable/server/#Arguments-2)
+### Arguments
 
 If the only thing we could do was traverse objects and their fields, GraphQL would already be a very useful language for data fetching. But when you add the ability to pass arguments to fields, things get much more interesting.
 
@@ -48,7 +48,7 @@ Arguments can be of many different types.
 
 [Read more about the GraphQL type system here.](https://graphql.org/learn/schema)
 
-### [Operation name](https://neomatrixcode.github.io/Diana.jl/stable/server/#Operation-name-1)
+### Operation name
 
 Up until now, we have been using a shorthand syntax where we omit both the `query` keyword and the query name, but in production apps it's useful to use these to make our code less ambiguous.
 
@@ -72,7 +72,7 @@ The _operation name_ is a meaningful and explicit name for your operation. It is
 my_schema.execute(query, operationName="PersonaNombreandEdad")
 ```
 
-### [Variables](https://neomatrixcode.github.io/Diana.jl/stable/server/#Variables-1)
+### Variables
 
 So far, we have been writing all of our arguments inside the query string. But in most applications, the arguments to fields will be dynamic: For example, there might be a dropdown, or a search field, or a set of filters.
 
@@ -102,7 +102,7 @@ Now, in our client code, we can simply pass a different variable rather than nee
 my_schema.execute(query,Variables=Dict("identificador"=>"100"))
 ```
 
-### [Variable definitions](https://neomatrixcode.github.io/Diana.jl/stable/server/#Variable-definitions-1)
+### Variable definitions
 
 The variable definitions are the part that looks like `(\$identificador: ID)` in the query above. It works just like the argument definitions for a function in a typed language. It lists all of the variables, prefixed by `\$`, followed by their type, in this case `ID`.
 
@@ -112,7 +112,7 @@ Variable definitions can be optional or required. In the case above, since there
 
 To learn more about the syntax for these variable definitions, it's useful to learn the GraphQL schema language. The schema language is explained in detail on the Schemas and Types seccion.
 
-### [Mutations](https://neomatrixcode.github.io/Diana.jl/stable/server/#Mutations-1)
+### Mutations
 
 Most discussions of GraphQL focus on data fetching, but any complete data platform needs a way to modify server-side data as well.
 
@@ -208,7 +208,7 @@ Note how `addPerson` field returns the `nombre` and `edad` fields of the newly c
 
 You might also notice that, in this example, the `data` variable we passed in is not a scalar. It's an _input object type_, a special kind of object type that can be passed in as an argument. Learn more about input types on the Schemas and Types seccion.
 
-### [Multiple fields in mutations](https://neomatrixcode.github.io/Diana.jl/stable/server/#Multiple-fields-in-mutations-1)
+### Multiple fields in mutations
 
 A mutation can contain multiple fields, just like a query. There's one important distinction between queries and mutations, other than the name:
 
