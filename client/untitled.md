@@ -52,7 +52,7 @@ r = Queryclient("https://neomatrix.herokuapp.com/graphql",query,operationName="h
 r.Info.status == 200 && println(r.Data)
 ```
 
-result:
+**Result**
 
 ```text
 {"data":{"neomatrix":{"nombre":"Acevedo Maldonado Josue"}}}

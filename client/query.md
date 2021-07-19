@@ -2,7 +2,7 @@
 
 
 
-```text
+```julia
 using Diana
 
 client = GraphQLClient("https://api.graph.cool/simple/v1/movies")
@@ -11,10 +11,13 @@ client.headers(Dict("header"=>"value"))
 
 or
 
-client = GraphQLClient("https://api.graph.cool/simple/v1/movies",auth="Bearer my-jwt-token",headers=Dict("header"=>"value"))
+client = GraphQLClient("https://api.graph.cool/simple/v1/movies"
+                      ,auth="Bearer my-jwt-token"
+                      ,headers=Dict("header"=>"value") 
+         )
 ```
 
-```text
+```julia
 query = """
         {
           Movie(title: "Inception"){
