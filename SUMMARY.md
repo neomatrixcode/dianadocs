@@ -6,6 +6,7 @@
 
 * [Simple query](client/untitled.md)
 * [Query](client/query.md)
+* [Mutations](client/mutations.md)
 * [Change serverUrl](client/change-serverurl.md)
 * [Change headers](client/change-headers.md)
 * [Change serverAuth](client/change-serverauth.md)
